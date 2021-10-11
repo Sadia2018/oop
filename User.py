@@ -6,18 +6,22 @@ class User:
 
     def make_deposit(self, amount):
         self.amount += amount
+        return self
 
     def make_withdrawal(self,amount):
         self.amount -= amount
+        return self
 
     def display_user_balance(self):
         print(f"User: {self.name}, Balance: {self.amount}")
+        return self
 
     def transfer_money(self,amount,user):
         self.amount -= amount
         user.amount += amount
         self.display_user_balance()
         user.display_user_balance()
+        return self
 
 
 sadia = User("Sadia")
@@ -29,6 +33,7 @@ sadia.make_deposit(100).make_deposit(200).make_deposit(200).make_withdrawal(45).
 # sadia.make_deposit(50)
 # sadia.make_withdrawal(45)
 # sadia.display_user_balance()
+
 
 sam.make_deposit(1000)
 sam.make_deposit(1000)
@@ -44,5 +49,4 @@ samira.display_user_balance()
 
 
 sam.transfer_money(400, sadia)
-
 
